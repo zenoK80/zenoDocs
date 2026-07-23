@@ -10,13 +10,12 @@ description: "ECMAScript와 Web API의 차이"
 **JavaScript 언어**와
 **브라우저가 제공하는 기능**이 함께 동작합니다.
 
-<Callout type="important">
+<Callout>
   **브라우저 JavaScript = ECMAScript + Web API**
 
-  ECMAScript는 코드의 문법과 기본 동작을 정의합니다.
-
-  Web API는 HTML 문서, 이벤트, 네트워크, 저장소처럼
-  브라우저에서 필요한 기능을 제공합니다.
+  ECMAScript는 코드의 문법과 기본 동작을 정의하고,
+  Web API는 문서·이벤트·네트워크·저장소 같은
+  브라우저 기능을 제공합니다.
 </Callout>
 
 이 문서는 앞으로 브라우저 API를 배우기 전에
@@ -168,12 +167,11 @@ JavaScript 코드를 실제로 실행하면서
 
 </Tabs>
 
-<Callout type="info">
-  **ECMA**는 정보 통신 기술의 표준을 만드는 표준화 기구입니다.
-
-  **ECMAScript**는 ECMA가 관리하는 스크립트 언어 표준이며,
-  명세 번호는 **ECMA-262**입니다.
-</Callout>
+> **ECMA와 ECMA-262**
+>
+> ECMA는 정보 통신 기술의 표준을 만드는 표준화 기구입니다.
+> ECMAScript는 ECMA가 관리하는 스크립트 언어 표준이며,
+> 공식 명세 번호는 **ECMA-262**입니다.
 
 ## 브라우저 JavaScript의 전체 구조
 
@@ -217,14 +215,14 @@ ECMAScript 코드를 해석하고 실행합니다.
 브라우저는 그 위에
 웹 페이지를 제어할 수 있는 객체와 함수를 추가합니다.
 
-<Callout>
-  **Web Platform**은
-  HTML, CSS, DOM, Fetch, URL 등
-  브라우저가 구현하는 웹 기술 전체를 가리키는 넓은 표현입니다.
+### Web Platform과 Web API
 
-  **Web API**는 그중 JavaScript에서 호출할 수 있도록
-  객체와 메서드 형태로 제공되는 기능을 뜻합니다.
-</Callout>
+**Web Platform**은
+HTML, CSS, DOM, Fetch, URL 등
+브라우저가 구현하는 웹 기술 전체를 가리키는 넓은 표현입니다.
+
+**Web API**는 그중 JavaScript에서 호출할 수 있도록
+객체와 메서드 형태로 제공되는 기능을 뜻합니다.
 
 ## ECMAScript가 정의하는 것
 
@@ -283,13 +281,11 @@ const discountedPrices = prices.map((price) => {
 `map()` 같은 동작도
 ECMAScript 영역에 속합니다.
 
-<Callout type="warning">
-  `console`은 매우 익숙하지만
-  ECMA-262가 정의하는 표준 내장 객체는 아닙니다.
+**참고:** `console`은 매우 익숙하지만
+ECMA-262가 정의하는 표준 내장 객체는 아닙니다.
 
-  브라우저와 Node.js 같은 실행 환경이
-  개발자가 로그를 확인할 수 있도록 제공하는 API입니다.
-</Callout>
+브라우저와 Node.js 같은 실행 환경이
+개발자가 로그를 확인할 수 있도록 제공하는 API입니다.
 
 ## Web API가 정의하는 것
 
@@ -472,11 +468,9 @@ const button = document.querySelector("button");
 console.log(button);
 ```
 
-<Callout type="info">
-  인터페이스는 **설계도 또는 계약**에 가깝고,
-  객체는 그 계약에 따라 실제로 만들어져
-  코드에서 사용하는 값에 가깝습니다.
-</Callout>
+> 인터페이스는 **설계도 또는 계약**에 가깝고,
+> 객체는 그 계약에 따라 실제로 만들어져
+> 코드에서 사용하는 값에 가깝습니다.
 
 ## Web IDL은 무엇일까?
 
@@ -541,13 +535,13 @@ JavaScript 객체와 메서드로 노출
   </tbody>
 </Table>
 
-<Callout>
-  Web IDL의 세부 문법을 외울 필요는 없습니다.
+**여기서 기억할 점**
 
-  “이 코드는 JavaScript 예제가 아니라
-  브라우저가 구현해야 할 API 계약을 표현한다”는 점만
-  먼저 이해하면 충분합니다.
-</Callout>
+Web IDL의 세부 문법을 외울 필요는 없습니다.
+
+이 코드는 JavaScript 실행 예제가 아니라
+브라우저가 구현해야 할 API 계약을 표현한다는 점만
+먼저 이해하면 충분합니다.
 
 ## 브라우저의 전역 환경
 
@@ -618,12 +612,11 @@ console.log(globalThis);
   </tbody>
 </Table>
 
-<Callout type="important">
-  `window`는 브라우저가 제공하는 객체입니다.
+**정리하면**
 
-  `globalThis`는 여러 환경에서 전역 값에 접근할 수 있도록
+- `window`는 브라우저가 제공하는 객체입니다.
+- `globalThis`는 여러 환경에서 전역 값에 접근할 수 있도록
   ECMAScript가 정의한 표준 프로퍼티입니다.
-</Callout>
 
 `window`와 전역 환경은
 뒤의 문서에서 더 자세히 다룹니다.
@@ -902,16 +895,14 @@ MDN API 문서 하단에는
   </tbody>
 </Table>
 
-<Callout type="info">
-  **명세**는 브라우저 구현자가 따라야 할
-  정확한 규칙을 정의합니다.
-
-  **MDN**은 개발자가 API를 사용할 수 있도록
-  문법, 예제, 반환값, 주의점, 호환성을 정리합니다.
-
-  일반적인 학습과 개발에서는 MDN을 먼저 읽고,
-  더 정확한 동작이 필요할 때 명세를 확인하면 됩니다.
-</Callout>
+> **명세와 MDN의 역할**
+>
+> 명세는 브라우저 구현자가 따라야 할 정확한 규칙을 정의합니다.
+> MDN은 개발자가 API를 사용할 수 있도록
+> 문법, 예제, 반환값, 주의점, 호환성을 정리합니다.
+>
+> 일반적인 학습과 개발에서는 MDN을 먼저 읽고,
+> 더 정확한 동작이 필요할 때 명세를 확인하면 됩니다.
 
 ## MDN 문서는 어떤 순서로 읽을까?
 
@@ -986,15 +977,13 @@ const observer = new IntersectionObserver(() => {});
 브라우저가 최신 JavaScript 문법을 지원한다고 해서
 모든 Web API를 지원하는 것은 아닙니다.
 
-<Callout type="info">
-  이 문서의 기본 예제에서 사용한
-  `querySelector()`, `addEventListener()`,
-  `localStorage`, `window`, `globalThis`는
-  현재 주요 브라우저에서 널리 사용할 수 있는 기능입니다.
+<Callout>
+  이 문서에서 사용한 기본 기능은
+  현재 주요 브라우저에서 널리 사용할 수 있습니다.
 
   새로운 API를 사용할 때는
-  각 MDN 문서의 **Baseline**과
-  브라우저 호환성 표를 따로 확인해야 합니다.
+  MDN의 **Baseline**과 브라우저 호환성 표를
+  별도로 확인해야 합니다.
 </Callout>
 
 ### Baseline이 의미하는 것
@@ -1040,15 +1029,10 @@ if (typeof globalThis.fetch === "function") {
 **기능 감지**라고 합니다.
 
 <Callout type="warning">
-  API가 객체에 존재한다는 사실만으로
-  실제 사용이 항상 성공하는 것은 아닙니다.
+  API가 존재해도 실제 사용이 항상 성공하는 것은 아닙니다.
 
-  일부 API는 다음 조건이 추가로 필요합니다.
-
-  - HTTPS 보안 환경
-  - 사용자 권한
-  - 버튼 클릭 같은 사용자 동작
-  - 특정 브라우저 설정
+  일부 API는 HTTPS, 사용자 권한,
+  버튼 클릭 같은 사용자 동작이 추가로 필요합니다.
 </Callout>
 
 ## 실행 가능한 전체 예제
@@ -1398,18 +1382,14 @@ ECMAScript 언어 시리즈에서 다룹니다.
 
 ## 핵심 정리
 
-<Callout type="important">
-  **ECMAScript**
-  → JavaScript의 문법과 기본 기능
+<Callout>
+  **ECMAScript** — JavaScript의 문법과 기본 기능
 
-  **호스트 환경**
-  → JavaScript를 실제로 실행하면서 자체 기능을 제공하는 환경
+  **호스트 환경** — JavaScript를 실행하면서 자체 기능을 제공하는 환경
 
-  **Web API**
-  → 브라우저가 JavaScript에 제공하는 기능
+  **Web API** — 브라우저가 JavaScript에 제공하는 기능
 
-  **Web Platform**
-  → HTML, CSS, DOM, Fetch 등 웹 기술 전체
+  **Web Platform** — HTML, CSS, DOM, Fetch 등 웹 기술 전체
 </Callout>
 
 - `Array`, `Map`, `Promise`, `globalThis`는 ECMAScript 영역입니다.
@@ -1436,19 +1416,22 @@ globalThis
 fetch
 ```
 
-<Callout>
-  **ECMAScript**
+<details>
+<summary>정답 보기</summary>
 
-  - `Array`
-  - `Promise`
-  - `globalThis`
+**ECMAScript**
 
-  **Web API**
+- `Array`
+- `Promise`
+- `globalThis`
 
-  - `document`
-  - `localStorage`
-  - `fetch`
-</Callout>
+**Web API**
+
+- `document`
+- `localStorage`
+- `fetch`
+
+</details>
 
 ### 문제 2
 
@@ -1458,47 +1441,59 @@ fetch
 const title = document.querySelector("h1");
 ```
 
-<Callout>
-  일반적인 Node.js 환경에는
-  현재 HTML 문서가 없으며,
-  브라우저의 `document` 객체도 제공되지 않기 때문입니다.
-</Callout>
+<details>
+<summary>정답 보기</summary>
+
+일반적인 Node.js 환경에는
+현재 HTML 문서가 없으며,
+브라우저의 `document` 객체도 제공되지 않기 때문입니다.
+
+</details>
 
 ### 문제 3
 
 Node.js에서 `fetch()`를 사용할 수 있으면
 `fetch()`는 ECMAScript 기능인가요?
 
-<Callout>
-  아닙니다.
+<details>
+<summary>정답 보기</summary>
 
-  `fetch()`는 Fetch Standard에서 정의된 Web API이며,
-  Node.js가 호환되는 기능을 자신의 실행 환경에 제공한 것입니다.
-</Callout>
+아닙니다.
+
+`fetch()`는 Fetch Standard에서 정의된 Web API이며,
+Node.js가 호환되는 기능을 자신의 실행 환경에 제공한 것입니다.
+
+</details>
 
 ### 문제 4
 
 `Document`와 `document`의 차이는 무엇인가요?
 
-<Callout>
-  `Document`는 문서 객체의 기능을 설명하는 인터페이스 이름입니다.
+<details>
+<summary>정답 보기</summary>
 
-  `document`는 현재 페이지에서 실제로 사용하는
-  `Document` 객체입니다.
-</Callout>
+`Document`는 문서 객체의 기능을 설명하는 인터페이스 이름입니다.
+
+`document`는 현재 페이지에서 실제로 사용하는
+`Document` 객체입니다.
+
+</details>
 
 ### 문제 5
 
 새로운 Web API를 사용하기 전에
 무엇을 확인해야 하나요?
 
-<Callout>
-  - 기능이 현재 브라우저에 존재하는지
-  - MDN의 Baseline과 호환성 표
-  - HTTPS가 필요한지
-  - 사용자 권한이 필요한지
-  - 사용자 클릭 같은 동작이 필요한지
-</Callout>
+<details>
+<summary>정답 보기</summary>
+
+- 기능이 현재 브라우저에 존재하는지
+- MDN의 Baseline과 호환성 표
+- HTTPS가 필요한지
+- 사용자 권한이 필요한지
+- 사용자 클릭 같은 동작이 필요한지
+
+</details>
 
 ## 참고 자료
 
