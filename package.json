@@ -6,12 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "postbuild": "pagefind --site .next/server/app --output-path out/_pagefind",
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.2.11",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "next": "^15.5.21",
+    "nextra": "^4.6.0",
+    "nextra-theme-docs": "^4.6.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -19,7 +22,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.11",
+    "eslint-config-next": "^15.5.21",
+    "pagefind": "^1.5.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

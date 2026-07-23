@@ -24,3 +24,49 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+body > header > nav {
+  width:100%;
+  max-width:100%;
+  margin:0;
+}
+
+body > div {
+  width:100%;
+  max-width:100%;
+  justify-content: space-between;
+}
+
+body > div > aside {
+ border-right:1px solid var(--x-color-gray-200); 
+}
+
+body > div > aside > div {
+  padding:16px 10px;
+}
+
+body > div > aside .nextra-sidebar-footer {
+  width:100%;
+  max-width:100%;
+  margin:0;
+}
+
+body > div > article {
+  max-width:960px;
+}
+
+body > div > article .nextra-breadcrumb {
+  margin-bottom:24px;
+}
+
+.nextra-toc {
+ border-left:1px solid var(--x-color-gray-200); 
+}
+
+.nextra-toc .nextra-scrollbar {
+  padding:16px 10px;
+}
+
+
+
+
